@@ -9,26 +9,20 @@
     --foreground: #ededed;
   }
 }
-
-html {
-  height: 100%;
-}
-
-html,
-body {
-  max-width: 100vw;
-  overflow-x: hidden;
-}
-
-body {
-  min-height: 100%;
-  display: flex;
-  flex-direction: column;
-  color: var(--foreground);
-  background: var(--background);
-  font-family: Arial, Helvetica, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+:root {
+  --background: #050505;
+  --foreground: #ffffff;
+  --primary: #bc13fe; /* Electric Purple */
+  --secondary: #ff003c; /* Neon Red */
+  --accent: #00f3ff; /* Neon Blue */
+  --surface: #121212;
+  --surface-alt: #1a1a1a;
+  --gritty: #242424;
+  
+  --font-main: 'Outfit', 'Inter', sans-serif;
+  --font-street: 'Permanent Marker', cursive;
+  
+  --glitch-speed: 0.3s;
 }
 
 * {
@@ -37,13 +31,223 @@ body {
   margin: 0;
 }
 
+html,
+body {
+  max-width: 100vw;
+  overflow-x: hidden;
+  background: var(--background);
+  color: var(--foreground);
+  font-family: var(--font-main);
+  line-height: 1.6;
+}
+
 a {
   color: inherit;
   text-decoration: none;
 }
 
-@media (prefers-color-scheme: dark) {
-  html {
-    color-scheme: dark;
-  }
+h1, h2, h3, h4, .font-street {
+  font-family: var(--font-main);
+  font-weight: 900;
+  text-transform: uppercase;
+  letter-spacing: -0.02em;
+}
+
+.street-text {
+  font-family: var(--font-street);
+  text-transform: none;
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+::-webkit-scrollbar-track {
+  background: var(--background);
+}
+::-webkit-scrollbar-thumb {
+  background: var(--primary);
+  border-radius: 4px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: var(--accent);
+}
+
+/* Utility Classes */
+.neon-text-purple { text-shadow: 0 0 5px var(--primary), 0 0 10px var(--primary); }
+.neon-text-red { text-shadow: 0 0 5px var(--secondary), 0 0 10px var(--secondary); }
+.neon-text-blue { text-shadow: 0 0 5px var(--accent), 0 0 10px var(--accent); }
+
+.neon-border-purple { border: 1px solid var(--primary); box-shadow: 0 0 10px var(--primary); }
+.neon-border-red { border: 1px solid var(--secondary); box-shadow: 0 0 10px var(--secondary); }
+
+.gritty-bg {
+  background-image: linear-gradient(rgba(5, 5, 5, 0.8), rgba(5, 5, 5, 0.8)), 
+                    url('https://www.transparenttextures.com/patterns/asfalt-light.png');
+}
+
+/* Animations */
+@keyframes glitch {
+  0% { transform: translate(0); }
+  20% { transform: translate(-2px, 2px); }
+  40% { transform: translate(-2px, -2px); }
+  60% { transform: translate(2px, 2px); }
+  80% { transform: translate(2px, -2px); }
+  100% { transform: translate(0); }
+}
+
+.glitch-hover:hover {
+  animation: glitch var(--glitch-speed) infinite;
+}
+
+.glass {
+  background: rgba(18, 18, 18, 0.7);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+/* Button Component */
+.btn {
+  padding: 12px 24px;
+  border: none;
+  cursor: pointer;
+  font-weight: 900;
+  text-transform: uppercase;
+  transition: all 0.2s ease;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  position: relative;
+  overflow: hidden;
+}
+
+.btn-primary {
+  background: var(--primary);
+  color: white;
+}
+
+.btn-primary:hover {
+  background: #d427ff;
+  box-shadow: 0 0 20px var(--primary);
+}
+
+.btn-outline {
+  background: transparent;
+  border: 2px solid var(--foreground);
+  color: var(--foreground);
+}
+
+.btn-outline:hover {
+  background: var(--foreground);
+  color: var(--background);
+}
+
+.btn-neon-blue {
+  background: transparent;
+  border: 2px solid var(--accent);
+  color: var(--accent);
+}
+
+.btn-neon-blue:hover {
+  background: var(--accent);
+  color: var(--background);
+  box-shadow: 0 0 20px var(--accent);
+}
+
+/* Advanced Glitch Effect */
+@keyframes glitch-skew {
+  0% { transform: skew(0deg); }
+  20% { transform: skew(-5deg); }
+  24% { transform: skew(5deg); }
+  28% { transform: skew(0deg); }
+  100% { transform: skew(0deg); }
+}
+
+.glitch-text {
+  position: relative;
+  display: inline-block;
+}
+
+.glitch-text::before,
+.glitch-text::after {
+  content: attr(data-text);
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: var(--background);
+}
+
+.glitch-text::before {
+  left: 2px;
+  text-shadow: -2px 0 var(--secondary);
+  clip: rect(44px, 450px, 56px, 0);
+  animation: glitch-anim 5s infinite linear alternate-reverse;
+}
+
+.glitch-text::after {
+  left: -2px;
+  text-shadow: -2px 0 var(--accent);
+  clip: rect(44px, 450px, 56px, 0);
+  animation: glitch-anim2 5s infinite linear alternate-reverse;
+}
+
+@keyframes glitch-anim {
+  0% { clip: rect(31px, 9999px, 94px, 0); }
+  20% { clip: rect(62px, 9999px, 42px, 0); }
+  40% { clip: rect(11px, 9999px, 98px, 0); }
+  60% { clip: rect(81px, 9999px, 34px, 0); }
+  80% { clip: rect(54px, 9999px, 12px, 0); }
+  100% { clip: rect(92px, 9999px, 76px, 0); }
+}
+
+@keyframes glitch-anim2 {
+  0% { clip: rect(67px, 9999px, 21px, 0); }
+  20% { clip: rect(35px, 9999px, 84px, 0); }
+  40% { clip: rect(91px, 9999px, 42px, 0); }
+  60% { clip: rect(12px, 9999px, 67px, 0); }
+  80% { clip: rect(24px, 9999px, 91px, 0); }
+  100% { clip: rect(54px, 9999px, 12px, 0); }
+}
+
+/* Smoke/Dust Particles simulation */
+.smoke-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  z-index: 5;
+  background: url('https://www.transparenttextures.com/patterns/dust.png');
+  opacity: 0.1;
+  animation: drift 60s linear infinite;
+}
+
+@keyframes drift {
+  from { background-position: 0 0; }
+  to { background-position: 1000px 1000px; }
+}
+
+/* Bass Reactive Simulation */
+@keyframes bass-pulse {
+  0% { transform: scale(1); filter: brightness(1); }
+  50% { transform: scale(1.02); filter: brightness(1.2); }
+  100% { transform: scale(1); filter: brightness(1); }
+}
+
+.bass-reactive {
+  animation: bass-pulse 0.4s infinite cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* Page Transitions */
+.page-fade-in {
+  animation: fadeIn 0.8s ease-out forwards;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
 }

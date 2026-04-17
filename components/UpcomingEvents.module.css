@@ -1,0 +1,156 @@
+.section {
+  padding: 120px 0;
+  background: var(--background);
+  position: relative;
+  overflow: hidden;
+}
+
+.section::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: radial-gradient(circle at 10% 10%, rgba(188, 19, 254, 0.05) 0%, transparent 50%),
+              radial-gradient(circle at 90% 90%, rgba(0, 243, 255, 0.05) 0%, transparent 50%);
+  pointer-events: none;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 40px;
+  display: flex;
+  align-items: center;
+  gap: 80px;
+}
+
+.eventInfo {
+  flex: 1;
+}
+
+.tag {
+  display: inline-block;
+  background: rgba(255, 255, 255, 0.1);
+  padding: 6px 12px;
+  border-radius: 4px;
+  font-size: 0.8rem;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  margin-bottom: 20px;
+  color: var(--accent);
+}
+
+.eventName {
+  font-size: 3rem;
+  line-height: 1.1;
+  margin-bottom: 24px;
+}
+
+.meta {
+  display: flex;
+  gap: 24px;
+  margin-bottom: 32px;
+}
+
+.metaItem {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  color: rgba(255, 255, 255, 0.6);
+  font-weight: 600;
+}
+
+.description {
+  font-size: 1.1rem;
+  margin-bottom: 40px;
+  color: rgba(255, 255, 255, 0.8);
+}
+
+.actions {
+  display: flex;
+  gap: 16px;
+}
+
+.countdownBox {
+  flex: 0 0 400px;
+  background: var(--surface);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  padding: 40px;
+  border-radius: 20px;
+  position: relative;
+  text-align: center;
+}
+
+.countdownTitle {
+  font-size: 1rem;
+  margin-bottom: 32px;
+  letter-spacing: 2px;
+  color: rgba(255, 255, 255, 0.5);
+}
+
+.timer {
+  display: flex;
+  justify-content: space-between;
+}
+
+.unit {
+  display: flex;
+  flex-direction: column;
+}
+
+.number {
+  font-size: 2.5rem;
+  font-weight: 900;
+  color: white;
+  margin-bottom: 4px;
+}
+
+.label {
+  font-size: 0.7rem;
+  text-transform: uppercase;
+  color: var(--primary);
+  font-weight: 800;
+}
+
+.glowEffect {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 120%;
+  height: 120%;
+  background: radial-gradient(circle, rgba(188, 19, 254, 0.1) 0%, transparent 70%);
+  pointer-events: none;
+  z-index: -1;
+}
+
+@media (max-width: 1024px) {
+  .container {
+    flex-direction: column;
+    text-align: center;
+    gap: 40px;
+  }
+  .meta {
+    justify-content: center;
+  }
+  .actions {
+    justify-content: center;
+  }
+  .countdownBox {
+    flex: 1;
+    width: 100%;
+  }
+}
+
+@media (max-width: 768px) {
+  .eventName {
+    font-size: 2rem;
+  }
+  .meta {
+    flex-direction: column;
+    gap: 12px;
+  }
+}

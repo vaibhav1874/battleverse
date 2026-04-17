@@ -1,0 +1,87 @@
+.footer {
+  background: var(--surface);
+  border-top: 1px solid rgba(255, 255, 255, 0.05);
+  padding: 80px 0 40px 0;
+  margin-top: 100px;
+}
+
+.container {
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 0 40px;
+  display: flex;
+  justify-content: space-between;
+  gap: 80px;
+  flex-wrap: wrap;
+}
+
+.brand {
+  flex: 1;
+  min-width: 300px;
+}
+
+.logo {
+  font-size: 2rem;
+  font-weight: 900;
+  display: flex;
+  gap: 4px;
+  margin-bottom: 24px;
+}
+
+.description {
+  color: rgba(255, 255, 255, 0.6);
+  max-width: 400px;
+  margin-bottom: 32px;
+}
+
+.socials {
+  display: flex;
+  gap: 20px;
+}
+
+.grid {
+  display: flex;
+  gap: 80px;
+  flex-wrap: wrap;
+}
+
+.column {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.column h4 {
+  color: white;
+  margin-bottom: 8px;
+  font-size: 1.1rem;
+}
+
+.column a {
+  color: rgba(255, 255, 255, 0.6);
+  transition: all 0.2s ease;
+}
+
+.column a:hover {
+  color: var(--primary);
+  transform: translateX(5px);
+}
+
+.bottom {
+  max-width: 1400px;
+  margin: 80px auto 0 auto;
+  padding: 40px 40px 0 40px;
+  border-top: 1px solid rgba(255, 255, 255, 0.05);
+  text-align: center;
+  color: rgba(255, 255, 255, 0.4);
+  font-size: 0.8rem;
+  font-weight: 700;
+  letter-spacing: 2px;
+}
+
+@media (max-width: 768px) {
+  .container {
+    flex-direction: column;
+    gap: 40px;
+  }
+}
