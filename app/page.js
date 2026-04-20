@@ -39,8 +39,8 @@ export default function Home() {
             BattleVerse is where the underground comes alive.
           </p>
           <div style={{ display: 'flex', gap: '20px', justifyContent: 'center' }}>
-            <button className="btn btn-primary" style={{ padding: '15px 40px' }}>Join the Battle</button>
-            <button className="btn btn-neon-blue" style={{ padding: '15px 40px' }}>Enter Discord</button>
+            <Link href="/register" className="btn btn-primary" style={{ padding: '15px 40px', textDecoration: 'none' }}>Join the Battle</Link>
+            <Link href="https://discord.gg/Mv5Qkq5r" target="_blank" className="btn btn-neon-blue" style={{ padding: '15px 40px', textDecoration: 'none' }}>Enter Discord</Link>
           </div>
         </div>
       </section>

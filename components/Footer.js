@@ -1,6 +1,6 @@
 import Link from 'next/link';
 import styles from './Footer.module.css';
-import { Camera, Play, Mail, Code, MessageSquare } from 'lucide-react';
+import { Instagram, Youtube, MessageCircle, Send, Mail } from 'lucide-react';
 
 export default function Footer() {
   return (
@@ -15,10 +15,10 @@ export default function Footer() {
             The ultimate underground lyrical combat platform. Join the verse, claim the throne.
           </p>
           <div className={styles.socials}>
-            <Link href="#" className="glitch-hover"><Camera /></Link>
-            <Link href="#" className="glitch-hover"><Play /></Link>
-            <Link href="#" className="glitch-hover"><MessageSquare /></Link>
-            <Link href="#" className="glitch-hover"><Mail /></Link>
+            <Link href="https://www.instagram.com/battleverse.hq?igsh=MWg0dWg4NW94YmZ0bA==" target="_blank" className="glitch-hover"><Instagram /></Link>
+            <Link href="https://discord.gg/Mv5Qkq5r" target="_blank" className="glitch-hover"><Send /></Link>
+            <Link href="https://chat.whatsapp.com/CX47jPP3cpXIWTvUaV9P99" target="_blank" className="glitch-hover"><MessageCircle /></Link>
+            <Link href="mailto:contact@battleverse.hq" className="glitch-hover"><Mail /></Link>
           </div>
         </div>
 
@@ -32,10 +32,10 @@ export default function Footer() {
           </div>
           <div className={styles.column}>
             <h4>Community</h4>
-            <Link href="https://discord.gg">Discord</Link>
-            <Link href="#">Instagram</Link>
-            <Link href="#">YouTube</Link>
-            <Link href="#">WhatsApp</Link>
+            <Link href="https://discord.gg/Mv5Qkq5r" target="_blank">Discord</Link>
+            <Link href="https://www.instagram.com/battleverse.hq?igsh=MWg0dWg4NW94YmZ0bA==" target="_blank">Instagram</Link>
+            <Link href="https://www.youtube.com/@BattleVerse" target="_blank">YouTube</Link>
+            <Link href="https://chat.whatsapp.com/CX47jPP3cpXIWTvUaV9P99" target="_blank">WhatsApp</Link>
           </div>
           <div className={styles.column}>
             <h4>Legal</h4>
