@@ -10,7 +10,7 @@ export default function FeaturedBattle() {
             <TrendingUp size={16} />
             <span>Trending Battle</span>
           </div>
-          <h2 className={styles.title}>CHAMPIONSHIP FINALS: <span className="neon-text-red">VOX vs. ZENITH</span></h2>
+          <h2 className={styles.title}>BATTLEVERSE SEASON 1</h2>
         </div>
 
         <div className={styles.videoWrapper}>

@@ -118,26 +118,18 @@ export default function AboutPage() {
         <div className={styles.founderGrid}>
           <MotionWrapper delay={0.1} direction="left">
             <FounderCard 
-              name="KAY-O" 
-              role="Founder & Host" 
-              bio="A veteran of the hip-hop scene, Kay-O has been battle-tested and refined in the fire of competitive culture."
-              image="https://images.unsplash.com/photo-1539571696357-5a69c17a67c6?ixlib=rb-1.2.1&auto=format&fit=crop&w=400&q=80"
+              name="Vaibhav Gurjar" 
+              role="Founder & CEO" 
+              bio="Visionary strategist behind BattleVerse. Dedicated to elevating hip-hop culture through digital innovation and premium content."
+              image="/images/vaibhav.jpeg"
             />
           </MotionWrapper>
-          <MotionWrapper delay={0.2}>
+          <MotionWrapper delay={0.2} direction="right">
             <FounderCard 
-              name="REVERB" 
-              role="Technical Director" 
-              bio="The architect of our digital ecosystem. Reverb ensures the platform is built for the future of entertainment."
-              image="https://images.unsplash.com/photo-1492562080023-ab3db95bfbce?ixlib=rb-1.2.1&auto=format&fit=crop&w=400&q=80"
-            />
-          </MotionWrapper>
-          <MotionWrapper delay={0.3} direction="right">
-            <FounderCard 
-              name="VIBE" 
-              role="Community Lead" 
-              bio="The soul of the Battleverse community. Vibe ensures that every voice in the culture resonates."
-              image="https://images.unsplash.com/photo-1544005313-94ddf0286df2?ixlib=rb-1.2.1&auto=format&fit=crop&w=400&q=80"
+              name="Lalit Jindal" 
+              role="Co-founder" 
+              bio="Master of operations and creative direction. Ensuring every beat and bar on the platform meets the highest standards of excellence."
+              image="/images/lalit.webp"
             />
           </MotionWrapper>
         </div>
