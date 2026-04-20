@@ -1,6 +1,6 @@
 import Link from 'next/link';
 import styles from './Footer.module.css';
-import { Instagram, Youtube, MessageCircle, Send, Mail } from 'lucide-react';
+import { Camera, Play, MessageCircle, Send, Mail } from 'lucide-react';
 
 export default function Footer() {
   return (
@@ -15,7 +15,7 @@ export default function Footer() {
             The ultimate underground lyrical combat platform. Join the verse, claim the throne.
           </p>
           <div className={styles.socials}>
-            <Link href="https://www.instagram.com/battleverse.hq?igsh=MWg0dWg4NW94YmZ0bA==" target="_blank" className="glitch-hover"><Instagram /></Link>
+            <Link href="https://www.instagram.com/battleverse.hq?igsh=MWg0dWg4NW94YmZ0bA==" target="_blank" className="glitch-hover"><Camera /></Link>
             <Link href="https://discord.gg/Mv5Qkq5r" target="_blank" className="glitch-hover"><Send /></Link>
             <Link href="https://chat.whatsapp.com/CX47jPP3cpXIWTvUaV9P99" target="_blank" className="glitch-hover"><MessageCircle /></Link>
             <Link href="mailto:contact@battleverse.hq" className="glitch-hover"><Mail /></Link>
