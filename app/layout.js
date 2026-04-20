@@ -1,6 +1,7 @@
 import "./globals.css";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
+import InteractiveProvider from "@/components/InteractiveProvider";
 
 export const metadata = {
   title: "BattleVerse | Bars. Beats. Bragging Rights.",
@@ -10,7 +11,8 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
-      <body>
+      <body style={{ cursor: 'none' }}>
+        <InteractiveProvider />
         <div className="smoke-overlay"></div>
         <Navbar />
         <main className="page-fade-in">{children}</main>

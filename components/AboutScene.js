@@ -11,14 +11,20 @@ export default function AboutScene() {
 
   useFrame((state) => {
     const t = state.clock.getElapsedTime();
+    const { x, y } = state.mouse;
+    
     if (mainRef.current) {
-      mainRef.current.rotation.x = t * 0.1;
-      mainRef.current.rotation.y = t * 0.15;
+      mainRef.current.rotation.x = t * 0.1 + y * 0.5;
+      mainRef.current.rotation.y = t * 0.15 + x * 0.5;
       mainRef.current.scale.setScalar(1 + Math.sin(t * 2) * 0.05);
+      // Subtle drift towards mouse
+      mainRef.current.position.x = THREE.MathUtils.lerp(mainRef.current.position.x, x * 0.5, 0.05);
+      mainRef.current.position.y = THREE.MathUtils.lerp(mainRef.current.position.y, y * 0.5, 0.05);
     }
     if (ringRef.current) {
       ringRef.current.rotation.z = -t * 0.3;
-      ringRef.current.rotation.x = t * 0.2;
+      ringRef.current.rotation.x = t * 0.2 + y * 0.2;
+      ringRef.current.rotation.y = x * 0.2;
     }
   });
 

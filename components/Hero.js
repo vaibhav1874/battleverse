@@ -36,9 +36,9 @@ export default function Hero() {
           Elevating the art of lyrical combat. Join the ultimate underground hip-hop arena on Discord.
         </p>
         <div className={styles.actions}>
-          <button className="btn btn-primary glitch-hover">
+          <Link href="/register" className="btn btn-primary glitch-hover">
             Join the Battle
-          </button>
+          </Link>
           <button className="btn btn-neon-blue glitch-hover">
             <Play size={20} /> Watch Battles
           </button>
