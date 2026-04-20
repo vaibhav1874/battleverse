@@ -1,11 +1,12 @@
 'use client';
 
+import Link from 'next/link';
 import { Suspense } from 'react';
 import { Canvas } from '@react-three/fiber';
 import { OrbitControls, PerspectiveCamera, Float, MeshDistortMaterial, MeshWobbleMaterial } from '@react-three/drei';
 import Scene from './Scene';
 import styles from './Hero.module.css';
-import { Play, Disc } from 'lucide-react';
+import { Play, Disc, Mic2 } from 'lucide-react';
 
 export default function Hero() {
   return (
@@ -53,6 +54,3 @@ export default function Hero() {
   );
 }
 
-function Mic2({ size }) {
-  return <Disc size={size} />;
-}

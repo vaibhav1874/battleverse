@@ -132,7 +132,7 @@
   background: var(--background);
   display: flex;
   flex-direction: column;
-  items-center: center;
+  align-items: center;
   justify-content: center;
   text-align: center;
   padding: 40px;
