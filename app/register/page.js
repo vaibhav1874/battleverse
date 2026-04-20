@@ -126,7 +126,7 @@ export default function RegisterPage() {
     <div className={styles.container}>
       <header className={styles.header}>
         <MotionWrapper direction="down">
-          <h1 className="neon-text-purple">SEASON 2 <span className="neon-text-blue">REGISTRATION</span></h1>
+          <h1 className="neon-text-green">SEASON 2 <span className="neon-text-blue">REGISTRATION</span></h1>
           <p className={styles.subtitle}>Fill in your details to claim your spot in the next era of BattleVerse.</p>
         </MotionWrapper>
       </header>
@@ -250,7 +250,7 @@ export default function RegisterPage() {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
           >
-            <Sparkles size={80} className="neon-text-purple" style={{marginBottom: '24px'}} />
+            <Sparkles size={80} className="neon-text-green" style={{marginBottom: '24px'}} />
             <h2 className="neon-text-blue">APPLICATION RECEIVED!</h2>
             <p style={{fontSize: '1.2rem', marginBottom: '32px'}}>
               Your bars have been recorded. Our team will review your audition and reach out to you via Gmail.

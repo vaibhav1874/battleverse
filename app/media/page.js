@@ -95,7 +95,7 @@ export default function MediaPage() {
       </section>
 
       <section className={styles.galleryPeek}>
-        <h2 className="neon-text-purple" style={{ marginBottom: '40px' }}>SNAPSHOTS</h2>
+        <h2 className="neon-text-green" style={{ marginBottom: '40px' }}>SNAPSHOTS</h2>
         <div className={styles.peekGrid}>
           {[1, 2, 3, 4].map(i => (
             <div key={i} className={styles.peekItem}>

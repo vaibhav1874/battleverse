@@ -79,7 +79,7 @@ export default function EventsPage() {
       </section>
 
       <section className={styles.pastEvents}>
-        <h2 className="neon-text-purple" style={{ marginBottom: '40px' }}>PAST HIGHLIGHTS</h2>
+        <h2 className="neon-text-green" style={{ marginBottom: '40px' }}>PAST HIGHLIGHTS</h2>
         <div className={styles.pastGrid}>
           {pastEvents.map(event => (
             <div key={event.id} className={styles.pastCard}>

@@ -32,7 +32,7 @@ export default function NewsPage() {
   return (
     <div className={styles.container}>
       <header className={styles.header}>
-        <h1 className="neon-text-purple">THE BEAT</h1>
+        <h1 className="neon-text-green">THE BEAT</h1>
         <p className={styles.subtitle}>Updates, interviews, and deep dives into the culture.</p>
       </header>
 

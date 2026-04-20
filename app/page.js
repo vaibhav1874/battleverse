@@ -12,7 +12,7 @@ export default function Home() {
       <section style={{ padding: '100px 40px', background: 'var(--background)' }}>
         <div style={{ maxWidth: '1200px', margin: '0 auto', display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(300px, 1fr))', gap: '40px' }}>
           <div style={{ textAlign: 'center' }}>
-            <div className="neon-text-purple" style={{ marginBottom: '20px' }}><Mic2 size={48} /></div>
+            <div className="neon-text-green" style={{ marginBottom: '20px' }}><Mic2 size={48} /></div>
             <h3>AUTHENTIC BARS</h3>
             <p style={{ color: 'rgba(255,255,255,0.6)' }}>Pure lyricism, no fillers. We host the rawest talent in the underground scene.</p>
           </div>
@@ -34,7 +34,7 @@ export default function Home() {
 
       <section className="gritty-bg" style={{ padding: '120px 40px', textAlign: 'center' }}>
         <div style={{ maxWidth: '800px', margin: '0 auto' }}>
-          <h2 className="neon-text-purple" style={{ fontSize: '3.5rem', marginBottom: '24px' }}>READY TO ENTER THE VERSE?</h2>
+          <h2 className="neon-text-green" style={{ fontSize: '3.5rem', marginBottom: '24px' }}>READY TO ENTER THE VERSE?</h2>
           <p style={{ fontSize: '1.2rem', marginBottom: '40px', color: 'rgba(255,255,255,0.8)' }}>
             Whether you're a lyricist looking for a stage or a fan hungry for fire, 
             BattleVerse is where the underground comes alive.

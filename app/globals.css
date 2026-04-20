@@ -12,7 +12,7 @@
 :root {
   --background: #050505;
   --foreground: #ffffff;
-  --primary: #bc13fe; /* Electric Purple */
+  --primary: #00ffa3; /* Premium Neon Green */
   --secondary: #ff003c; /* Neon Red */
   --accent: #00f3ff; /* Neon Blue */
   --instagram: #e1306c; /* Neon Pinkish */
@@ -76,11 +76,11 @@ h1, h2, h3, h4, .font-street {
 }
 
 /* Utility Classes */
-.neon-text-purple { text-shadow: 0 0 5px var(--primary), 0 0 10px var(--primary); }
+.neon-text-green { text-shadow: 0 0 5px var(--primary), 0 0 10px var(--primary); }
 .neon-text-red { text-shadow: 0 0 5px var(--secondary), 0 0 10px var(--secondary); }
 .neon-text-blue { text-shadow: 0 0 5px var(--accent), 0 0 10px var(--accent); }
 
-.neon-border-purple { border: 1px solid var(--primary); box-shadow: 0 0 10px var(--primary); }
+.neon-border-green { border: 1px solid var(--primary); box-shadow: 0 0 10px var(--primary); }
 .neon-border-red { border: 1px solid var(--secondary); box-shadow: 0 0 10px var(--secondary); }
 
 .gritty-bg {

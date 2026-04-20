@@ -22,7 +22,7 @@ export default function Scene() {
         <mesh ref={torusRef} position={[2, 1, 0]}>
           <torusKnotGeometry args={[0.6, 0.2, 128, 32]} />
           <MeshDistortMaterial
-            color="#bc13fe"
+            color="#00ffa3"
             speed={5}
             distort={0.4}
             roughness={0.1}

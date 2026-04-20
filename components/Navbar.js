@@ -7,7 +7,7 @@ export default function Navbar() {
     <nav className={`${styles.navbar} glass`}>
       <div className={styles.container}>
         <Link href="/" className={styles.logo}>
-          <span className="neon-text-purple">BATTLE</span>
+          <span className="neon-text-green">BATTLE</span>
           <span className="neon-text-blue">VERSE</span>
         </Link>
         
