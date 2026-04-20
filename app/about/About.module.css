@@ -50,24 +50,45 @@
   border-radius: 20px;
   overflow: hidden;
   box-shadow: 0 30px 60px rgba(0, 0, 0, 0.5);
+  height: 500px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: radial-gradient(circle at center, rgba(188, 19, 254, 0.1), transparent);
 }
 
-.imageBox img {
-  width: 100%;
-  display: block;
-}
-
-.imageOverlay {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background: linear-gradient(45deg, rgba(188, 19, 254, 0.2), transparent);
-}
-
-.missionVision {
+.visionSection, .valuesSection {
   margin-bottom: 160px;
+}
+
+.sectionHeader {
+  text-align: center;
+  margin-bottom: 60px;
+}
+
+.sectionHeader h2 {
+  font-size: 3rem;
+  margin-bottom: 16px;
+}
+
+.sectionHeader p {
+  font-size: 1.4rem;
+  color: rgba(255, 255, 255, 0.7);
+}
+
+.visionFooter {
+  margin-top: 60px;
+  text-align: center;
+  max-width: 800px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.visionFooter p {
+  font-size: 1.2rem;
+  color: rgba(255, 255, 255, 0.6);
+  line-height: 1.8;
+  font-style: italic;
 }
 
 .grid {
@@ -87,6 +108,7 @@
 .card:hover {
   transform: translateY(-10px);
   border-color: rgba(255, 255, 255, 0.2);
+  background: rgba(255, 255, 255, 0.02);
 }
 
 .card h3 {
@@ -109,11 +131,16 @@
   border-radius: 24px;
   overflow: hidden;
   border: 1px solid rgba(255, 255, 255, 0.05);
+  transition: transform 0.3s ease;
+}
+
+.founderCard:hover {
+  transform: scale(1.02);
 }
 
 .founderImage {
   position: relative;
-  height: 300px;
+  height: 350px;
 }
 
 .founderImage img {
