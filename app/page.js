@@ -1,3 +1,4 @@
+import Link from 'next/link';
 import Hero from "@/components/Hero";
 import FeaturedBattle from "@/components/FeaturedBattle";
 import UpcomingEvents from "@/components/UpcomingEvents";
