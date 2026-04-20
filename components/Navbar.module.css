@@ -52,6 +52,13 @@
 .actions {
   display: flex;
   align-items: center;
+  gap: 12px;
+}
+
+.navBtn {
+  padding: 8px 16px !important;
+  font-size: 0.8rem !important;
+  white-space: nowrap;
 }
 
 @media (max-width: 1200px) {
@@ -63,7 +70,7 @@
   }
 }
 
-@media (max-width: 1024px) {
+@media (max-width: 1250px) {
   .links {
     display: none;
   }

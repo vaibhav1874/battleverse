@@ -35,16 +35,16 @@ export default function Navbar() {
         </div>
 
         <div className={styles.actions}>
-          <Link href="/register" className="btn btn-neon-blue glitch-hover" style={{ marginRight: '10px' }}>
+          <Link href="/register" className={`btn btn-neon-blue glitch-hover ${styles.navBtn}`}>
             Register S2
           </Link>
-          <Link href="https://discord.gg/Mv5Qkq5r" target="_blank" className="btn btn-primary glitch-hover">
+          <Link href="https://discord.gg/Mv5Qkq5r" target="_blank" className={`btn btn-primary glitch-hover ${styles.navBtn}`}>
             Join Discord
           </Link>
-          <Link href="https://www.instagram.com/battleverse.hq?igsh=MWg0dWg4NW94YmZ0bA==" target="_blank" className="btn btn-instagram glitch-hover" style={{ marginLeft: '10px' }}>
+          <Link href="https://www.instagram.com/battleverse.hq?igsh=MWg0dWg4NW94YmZ0bA==" target="_blank" className={`btn btn-instagram glitch-hover ${styles.navBtn}`}>
             <Camera size={18} /> <span>INSTA</span>
           </Link>
-          <Link href="https://chat.whatsapp.com/CX47jPP3cpXIWTvUaV9P99" target="_blank" className="btn btn-whatsapp glitch-hover" style={{ marginLeft: '10px' }}>
+          <Link href="https://chat.whatsapp.com/CX47jPP3cpXIWTvUaV9P99" target="_blank" className={`btn btn-whatsapp glitch-hover ${styles.navBtn}`}>
             <MessageCircle size={18} /> <span>WHATSAPP</span>
           </Link>
         </div>
