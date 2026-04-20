@@ -27,20 +27,6 @@ export default function FeaturedBattle() {
             ></iframe>
           </div>
           
-          <div className={styles.details}>
-            <div className={styles.stat}>
-              <span className={styles.statValue}>1.2M</span>
-              <span className={styles.statLabel}>Views</span>
-            </div>
-            <div className={styles.stat}>
-              <span className={styles.statValue}>45K</span>
-              <span className={styles.statLabel}>Votes</span>
-            </div>
-            <div className={styles.stat}>
-              <span className={styles.statValue}>UNDERGROUND</span>
-              <span className={styles.statLabel}>League</span>
-            </div>
-          </div>
         </div>
       </div>
     </section>
