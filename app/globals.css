@@ -15,6 +15,8 @@
   --primary: #bc13fe; /* Electric Purple */
   --secondary: #ff003c; /* Neon Red */
   --accent: #00f3ff; /* Neon Blue */
+  --instagram: #e1306c; /* Neon Pinkish */
+  --whatsapp: #25d366; /* Neon Green */
   --surface: #121212;
   --surface-alt: #1a1a1a;
   --gritty: #242424;
@@ -153,6 +155,26 @@ h1, h2, h3, h4, .font-street {
   background: var(--accent);
   color: var(--background);
   box-shadow: 0 0 20px var(--accent);
+}
+
+.btn-instagram {
+  background: var(--instagram);
+  color: white;
+}
+
+.btn-instagram:hover {
+  background: #ff3e84;
+  box-shadow: 0 0 20px var(--instagram);
+}
+
+.btn-whatsapp {
+  background: var(--whatsapp);
+  color: white;
+}
+
+.btn-whatsapp:hover {
+  background: #2eff7c;
+  box-shadow: 0 0 20px var(--whatsapp);
 }
 
 /* Advanced Glitch Effect */
