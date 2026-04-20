@@ -7,8 +7,8 @@ export default function Navbar() {
     <nav className={`${styles.navbar} glass`}>
       <div className={styles.container}>
         <Link href="/" className={styles.logo}>
-          <span className="neon-text-green">BATTLE</span>
-          <span className="neon-text-blue">VERSE</span>
+          <span className="text-primary">BATTLE</span>
+          <span className="text-secondary">VERSE</span>
         </Link>
         
         <div className={styles.links}>

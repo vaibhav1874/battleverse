@@ -44,7 +44,7 @@ export default function BattlersPage() {
   return (
     <div className={styles.container}>
       <header className={styles.header}>
-        <h1 className="neon-text-green">THE WARRIORS</h1>
+        <h1 className="neon-text-purple">THE WARRIORS</h1>
         <p className={styles.subtitle}>The masters of the mic. The legends of the Verse.</p>
       </header>
 
@@ -94,7 +94,7 @@ export default function BattlersPage() {
             </form>
           </div>
           <div className={styles.joinGraphic}>
-            <Mic size={120} className="neon-text-green" />
+            <Mic size={120} className="neon-text-purple" />
           </div>
         </div>
       </section>

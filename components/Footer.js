@@ -8,8 +8,8 @@ export default function Footer() {
       <div className={styles.container}>
         <div className={styles.brand}>
           <Link href="/" className={styles.logo}>
-            <span className="neon-text-green">BATTLE</span>
-            <span className="neon-text-blue">VERSE</span>
+            <span className="text-primary">BATTLE</span>
+            <span className="text-secondary">VERSE</span>
           </Link>
           <p className={styles.description}>
             The ultimate underground lyrical combat platform. Join the verse, claim the throne.

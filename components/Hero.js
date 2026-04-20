@@ -15,7 +15,7 @@ export default function Hero() {
         <Canvas>
           <PerspectiveCamera makeDefault position={[0, 0, 5]} />
           <ambientLight intensity={0.5} />
-          <pointLight position={[10, 10, 10]} intensity={1} color="#00ffa3" />
+          <pointLight position={[10, 10, 10]} intensity={1} color="#00a67a" />
           <pointLight position={[-10, -10, -10]} intensity={1} color="#00f3ff" />
           <Suspense fallback={null}>
             <Scene />
@@ -31,16 +31,16 @@ export default function Hero() {
         </div>
         <h1 className={styles.title}>
           BARS. BEATS.<br />
-          <span className="neon-text-green">BRAGGING RIGHTS.</span>
+          <span className="text-primary">BRAGGING RIGHTS.</span>
         </h1>
         <p className={styles.subtitle}>
           Elevating the art of lyrical combat. Join the ultimate underground hip-hop arena on Discord.
         </p>
         <div className={styles.actions}>
-          <Link href="/register" className="btn btn-primary glitch-hover">
+          <Link href="/register" className="btn btn-primary">
             Join the Battle
           </Link>
-          <button className="btn btn-neon-blue glitch-hover">
+          <button className="btn btn-neon-blue">
             <Play size={20} /> Watch Battles
           </button>
         </div>

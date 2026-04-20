@@ -33,12 +33,12 @@ export default function AboutScene() {
       <Float speed={4} rotationIntensity={1} floatIntensity={2}>
         <TorusKnot ref={mainRef} args={[1, 0.4, 256, 64]} position={[0, 0, 0]}>
           <MeshDistortMaterial
-            color="#00ffa3"
+            color="#00a67a"
             speed={4}
             distort={0.4}
             roughness={0.1}
             metalness={0.9}
-            emissive="#00ffa3"
+            emissive="#00a67a"
             emissiveIntensity={0.2}
           />
         </TorusKnot>

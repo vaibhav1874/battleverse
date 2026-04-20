@@ -13,7 +13,7 @@ export default function AboutPage() {
     <div className={`${styles.container} page-fade-in`}>
       <header className={styles.header}>
         <MotionWrapper direction="down">
-          <h1 className="neon-text-green">BATTLEVERSE</h1>
+          <h1 className="text-primary">BATTLEVERSE</h1>
           <p className={styles.subtitle}>Where Culture Meets Content. The Future of Rap Battles.</p>
         </MotionWrapper>
       </header>
@@ -22,12 +22,12 @@ export default function AboutPage() {
         <div className={styles.storyGrid}>
           <MotionWrapper direction="left" delay={0.2}>
             <div className={styles.storyContent}>
-              <h2 className="glitch-text" data-text="THE NEW AGE">THE <span className="neon-text-blue">NEW AGE</span></h2>
+              <h2 className="glitch-text" data-text="THE NEW AGE">THE <span className="text-primary">NEW AGE</span></h2>
               <p>
                 Battleverse is a content-driven rap battle platform built at the intersection of hip-hop culture, digital entertainment, and brand storytelling. It is designed to transform raw lyrical talent into high-impact content experiences that resonate with today’s fast-moving, attention-driven audiences.
               </p>
               <p>
-                At its core, Battleverse provides a competitive stage for emerging and underground artists, enabling them to showcase their skills, build identity, and gain visibility in a structured yet creatively <span className="street-text neon-text-green">آزاد</span> environment.
+                At its core, Battleverse provides a competitive stage for emerging and underground artists, enabling them to showcase their skills, build identity, and gain visibility in a structured yet creatively <span className="street-text text-primary">آزاد</span> environment.
               </p>
               <p>
                 The platform goes beyond traditional rap battles by producing high-engagement, short-form digital content optimized for social media consumption.
@@ -48,7 +48,7 @@ export default function AboutPage() {
       <section className={styles.visionSection}>
         <div className={styles.sectionHeader}>
           <MotionWrapper>
-            <h2 className="neon-text-red">🎯 OUR VISION</h2>
+            <h2 className="text-secondary">🎯 OUR VISION</h2>
             <p>To build a new-age entertainment ecosystem where:</p>
           </MotionWrapper>
         </div>
@@ -69,7 +69,7 @@ export default function AboutPage() {
           </MotionWrapper>
           <MotionWrapper delay={0.3}>
             <TiltCard className={`${styles.card} glass`}>
-              <Users className="neon-text-green" size={40} />
+              <Users className="text-primary" size={40} />
               <h3>Culture</h3>
               <p>Drives connection across the generation.</p>
             </TiltCard>
@@ -103,7 +103,7 @@ export default function AboutPage() {
           </MotionWrapper>
           <MotionWrapper direction="right" delay={0.3}>
             <TiltCard className={`${styles.card} glass`}>
-              <Volume2 className="neon-text-green" size={40} />
+              <Volume2 className="neon-text-purple" size={40} />
               <h3>Culture</h3>
               <p>Over Noise</p>
             </TiltCard>
@@ -113,7 +113,7 @@ export default function AboutPage() {
 
       <section className={styles.founders}>
         <MotionWrapper>
-          <h2 className="neon-text-green" style={{ textAlign: 'center', marginBottom: '60px' }}>THE MINDS BEHIND THE VERSE</h2>
+          <h2 className="text-primary" style={{ textAlign: 'center', marginBottom: '60px' }}>THE MINDS BEHIND THE VERSE</h2>
         </MotionWrapper>
         <div className={styles.founderGrid}>
           <MotionWrapper delay={0.1} direction="left">

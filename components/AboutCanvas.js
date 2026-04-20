@@ -11,7 +11,7 @@ export default function AboutCanvas() {
       <Canvas shadow={{ enabled: true }} dpr={[1, 2]}>
         <PerspectiveCamera makeDefault position={[0, 0, 6]} />
         <ambientLight intensity={0.5} />
-        <pointLight position={[10, 10, 10]} intensity={1.5} color="#00ffa3" />
+        <pointLight position={[10, 10, 10]} intensity={1.5} color="#00a67a" />
         <pointLight position={[-10, -10, -10]} intensity={1} color="#00f3ff" />
         <spotLight position={[0, 5, 0]} intensity={0.5} />
         

@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;700;800&family=Syne:wght@700;800&display=swap');
+
 :root {
   --background: #ffffff;
   --foreground: #171717;
@@ -12,16 +14,17 @@
 :root {
   --background: #050505;
   --foreground: #ffffff;
-  --primary: #00ffa3; /* Premium Neon Green */
-  --secondary: #ff003c; /* Neon Red */
-  --accent: #00f3ff; /* Neon Blue */
-  --instagram: #e1306c; /* Neon Pinkish */
-  --whatsapp: #25d366; /* Neon Green */
-  --surface: #121212;
-  --surface-alt: #1a1a1a;
-  --gritty: #242424;
+  --primary: #00a67a; /* Premium Emerald Green */
+  --secondary: #006b54; /* Deep Emerald */
+  --accent: #d7c7a1; /* Muted Gold/Sand */
+  --instagram: #e1306c; 
+  --whatsapp: #25d366; 
+  --surface: #0a0a0a;
+  --surface-alt: #121212;
+  --gritty: #1a1a1a;
   
-  --font-main: 'Outfit', 'Inter', sans-serif;
+  --font-main: 'Plus Jakarta Sans', sans-serif;
+  --font-title: 'Syne', sans-serif;
   --font-street: 'Permanent Marker', cursive;
   
   --glitch-speed: 0.3s;
@@ -48,11 +51,11 @@ a {
   text-decoration: none;
 }
 
-h1, h2, h3, h4, .font-street {
-  font-family: var(--font-main);
-  font-weight: 900;
+h1, h2, h3, h4 {
+  font-family: var(--font-title);
+  font-weight: 800;
   text-transform: uppercase;
-  letter-spacing: -0.02em;
+  letter-spacing: -0.01em;
 }
 
 .street-text {
@@ -72,15 +75,24 @@ h1, h2, h3, h4, .font-street {
   border-radius: 4px;
 }
 ::-webkit-scrollbar-thumb:hover {
-  background: var(--accent);
+  background: var(--secondary);
 }
 
-/* Utility Classes */
-.neon-text-green { text-shadow: 0 0 5px var(--primary), 0 0 10px var(--primary); }
-.neon-text-red { text-shadow: 0 0 5px var(--secondary), 0 0 10px var(--secondary); }
-.neon-text-blue { text-shadow: 0 0 5px var(--accent), 0 0 10px var(--accent); }
+/* Utility Classes - Premium Solid Styling (No Neon) */
+.text-primary { color: var(--primary); }
+.text-secondary { color: var(--secondary); }
+.text-accent { color: var(--accent); }
 
-.neon-border-green { border: 1px solid var(--primary); box-shadow: 0 0 10px var(--primary); }
+.border-primary { border: 1px solid var(--primary); }
+.border-secondary { border: 1px solid var(--secondary); }
+
+/* Keep existing classes for compatibility but update to premium style */
+.neon-text-purple { color: var(--primary); text-shadow: none !important; }
+.neon-text-red { color: var(--secondary); text-shadow: none !important; }
+.neon-text-blue { color: var(--accent); text-shadow: none !important; }
+
+.neon-border-purple { border: 1px solid var(--primary); box-shadow: none !important; }
+.neon-border-red { border: 1px solid var(--secondary); box-shadow: none !important; }
 .neon-border-red { border: 1px solid var(--secondary); box-shadow: 0 0 10px var(--secondary); }
 
 .gritty-bg {
@@ -130,8 +142,8 @@ h1, h2, h3, h4, .font-street {
 }
 
 .btn-primary:hover {
-  background: #d427ff;
-  box-shadow: 0 0 20px var(--primary);
+  background: var(--secondary);
+  transform: translateY(-2px);
 }
 
 .btn-outline {
@@ -147,14 +159,14 @@ h1, h2, h3, h4, .font-street {
 
 .btn-neon-blue {
   background: transparent;
-  border: 2px solid var(--accent);
-  color: var(--accent);
+  border: 2px solid var(--primary);
+  color: var(--primary);
 }
 
 .btn-neon-blue:hover {
-  background: var(--accent);
+  background: var(--primary);
   color: var(--background);
-  box-shadow: 0 0 20px var(--accent);
+  transform: translateY(-2px);
 }
 
 .btn-instagram {

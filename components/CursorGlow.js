@@ -52,10 +52,10 @@ export default function CursorGlow() {
           height: '100vh',
           zIndex: 1,
           pointerEvents: 'none',
-          background: `radial-gradient(600px circle at ${mouseX.get()}px ${mouseY.get()}px, rgba(188, 19, 254, 0.05), transparent 80%)`,
+          background: `radial-gradient(600px circle at ${mouseX.get()}px ${mouseY.get()}px, rgba(0, 166, 122, 0.05), transparent 80%)`,
         }}
         animate={{
-          background: `radial-gradient(800px circle at ${mouseX.get()}px ${mouseY.get()}px, rgba(188, 19, 254, 0.08), transparent 80%)`,
+          background: `radial-gradient(800px circle at ${mouseX.get()}px ${mouseY.get()}px, rgba(0, 166, 122, 0.08), transparent 80%)`,
         }}
       />
 
@@ -69,8 +69,8 @@ export default function CursorGlow() {
           width: isHovered ? 80 : 40,
           height: isHovered ? 80 : 40,
           borderRadius: '50%',
-          border: `2px solid ${isHovered ? '#00f3ff' : '#00ffa3'}`,
-          boxShadow: `0 0 ${isHovered ? '20px' : '10px'} ${isHovered ? '#00f3ff' : '#00ffa3'}`,
+          border: `2px solid ${isHovered ? '#d7c7a1' : '#00a67a'}`,
+          boxShadow: `0 0 ${isHovered ? '20px' : '0px'} ${isHovered ? '#d7c7a1' : '#00a67a'}`,
           zIndex: 9999,
           pointerEvents: 'none',
           x: cursorX,
