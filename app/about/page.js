@@ -27,7 +27,7 @@ export default function AboutPage() {
                 Battleverse is a content-driven rap battle platform built at the intersection of hip-hop culture, digital entertainment, and brand storytelling. It is designed to transform raw lyrical talent into high-impact content experiences that resonate with today’s fast-moving, attention-driven audiences.
               </p>
               <p>
-                At its core, Battleverse provides a competitive stage for emerging and underground artists, enabling them to showcase their skills, build identity, and gain visibility in a structured yet creatively <span className="street-text text-primary">آزاد</span> environment.
+                At its core, Battleverse provides a competitive stage for emerging and underground artists, enabling them to showcase their skills, build identity, and gain visibility in a structured yet creatively free environment.
               </p>
               <p>
                 The platform goes beyond traditional rap battles by producing high-engagement, short-form digital content optimized for social media consumption.
@@ -48,7 +48,7 @@ export default function AboutPage() {
       <section className={styles.visionSection}>
         <div className={styles.sectionHeader}>
           <MotionWrapper>
-            <h2 className="text-secondary">🎯 OUR VISION</h2>
+            <h2 className="text-secondary">OUR VISION</h2>
             <p>To build a new-age entertainment ecosystem where:</p>
           </MotionWrapper>
         </div>
@@ -57,21 +57,21 @@ export default function AboutPage() {
             <TiltCard className={`${styles.card} glass`}>
               <Zap className="neon-text-blue" size={40} />
               <h3>Talent</h3>
-              <p>Discovered through high-impact content.</p>
+              <p>is discovered through content</p>
             </TiltCard>
           </MotionWrapper>
           <MotionWrapper delay={0.2}>
             <TiltCard className={`${styles.card} glass`}>
               <Target className="neon-text-red" size={40} />
               <h3>Creativity</h3>
-              <p>Meets fierce competition in every bar.</p>
+              <p>meets competition</p>
             </TiltCard>
           </MotionWrapper>
           <MotionWrapper delay={0.3}>
             <TiltCard className={`${styles.card} glass`}>
               <Users className="text-primary" size={40} />
               <h3>Culture</h3>
-              <p>Drives connection across the generation.</p>
+              <p>And culture drives connection</p>
             </TiltCard>
           </MotionWrapper>
         </div>
@@ -84,28 +84,28 @@ export default function AboutPage() {
 
       <section className={styles.valuesSection}>
         <MotionWrapper>
-          <h2 className="neon-text-blue" style={{ textAlign: 'center', marginBottom: '60px' }}>🔥 WHAT WE STAND FOR</h2>
+          <h2 className="neon-text-blue" style={{ textAlign: 'center', marginBottom: '60px' }}>WHAT WE STAND FOR</h2>
         </MotionWrapper>
         <div className={styles.grid}>
           <MotionWrapper direction="left" delay={0.1}>
             <TiltCard className={`${styles.card} glass`}>
               <ShieldCheck className="neon-text-green" size={40} />
               <h3>Authenticity</h3>
-              <p>Over Hype</p>
+              <p>over hype</p>
             </TiltCard>
           </MotionWrapper>
           <MotionWrapper delay={0.2}>
             <TiltCard className={`${styles.card} glass`}>
               <Star className="neon-text-yellow" size={40} />
               <h3>Talent</h3>
-              <p>Over Trends</p>
+              <p>over trends</p>
             </TiltCard>
           </MotionWrapper>
           <MotionWrapper direction="right" delay={0.3}>
             <TiltCard className={`${styles.card} glass`}>
               <Volume2 className="neon-text-purple" size={40} />
               <h3>Culture</h3>
-              <p>Over Noise</p>
+              <p>over noise</p>
             </TiltCard>
           </MotionWrapper>
         </div>
