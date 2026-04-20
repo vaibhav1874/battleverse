@@ -15,12 +15,16 @@ export default function FeaturedBattle() {
 
         <div className={styles.videoWrapper}>
           <div className={styles.videoPlaceholder}>
-            {/* In a real app, this would be a YouTube embed or custom player */}
-            <img src="https://images.unsplash.com/photo-1516280440614-37939bb91d8a?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" alt="Battle" />
-            <div className="video-overlay"></div>
-            <button className={`${styles.playBtn} glitch-hover`}>
-              <Play size={40} fill="currentColor" />
-            </button>
+            <iframe 
+              width="100%" 
+              height="100%" 
+              src="https://www.youtube.com/embed/7s8ffzMJY4Y" 
+              title="Battle Verse FeaturedBattle" 
+              frameBorder="0" 
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
+              allowFullScreen
+              style={{ border: 'none' }}
+            ></iframe>
           </div>
           
           <div className={styles.details}>
