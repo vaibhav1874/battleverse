@@ -10,10 +10,8 @@ export default function UpcomingEvents() {
   });
 
   useEffect(() => {
-    // Set landing date for the next event (demo date 30 days from now)
-    const eventDate = new Date();
-    eventDate.setDate(eventDate.getDate() + 15);
-    eventDate.setHours(20, 0, 0, 0);
+    // Set landing date for Battleverse Season 2
+    const eventDate = new Date('2026-06-27T20:00:00');
 
     const timer = setInterval(() => {
       const now = new Date();
@@ -38,21 +36,22 @@ export default function UpcomingEvents() {
     <section className={styles.section}>
       <div className={styles.container}>
         <div className={styles.eventInfo}>
-          <div className={styles.tag}>Upcoming Event</div>
-          <h2 className={styles.eventName}>THE IRON MIC INVITATIONAL</h2>
+          <div className={styles.tag}>Upcoming Season</div>
+          <h2 className={styles.eventName}>BATTLEVERSE SEASON 2</h2>
           <div className={styles.meta}>
             <div className={styles.metaItem}>
               <Calendar size={18} />
-              <span>Oct 25, 2026 | 8:00 PM EST</span>
+              <span>June 27, 2026 | 8:00 PM</span>
             </div>
             <div className={styles.metaItem}>
               <MapPin size={18} />
-              <span>Discord Main Stage & Live Stream</span>
+              <span>Main Stage & Global Stream</span>
             </div>
           </div>
           <p className={styles.description}>
-            16 heavyweights. One mic. The ultimate showdown of lyricism and crowd control. 
-            Limited slots for registration. Don't miss the fire.
+            Battleverse Season 2 will be coming on 27th June 2026. 
+            The next chapter of underground hip-hop culture. 
+            Register now to secure your spot in the arena.
           </p>
           <div className={styles.actions}>
             <button className="btn btn-primary glitch-hover">Register Now</button>
