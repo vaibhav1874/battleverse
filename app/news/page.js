@@ -11,7 +11,7 @@ export default function NewsPage() {
 
       <article className={`${styles.mainArticle} glass`}>
         <img 
-          src="https://images.unsplash.com/photo-1516280440614-37939bb91d8a?ixlib=rb-1.2.1&auto=format&fit=crop&w=1200&q=80" 
+          src="https://images.unsplash.com/photo-1598387181032-a3103a2db5b3?ixlib=rb-1.2.1&auto=format&fit=crop&w=1200&q=80" 
           alt="BattleVerse Season 2" 
           className={styles.heroImage} 
         />
