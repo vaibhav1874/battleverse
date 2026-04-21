@@ -134,8 +134,15 @@
   .links {
     display: none;
   }
+  .actions {
+    gap: 8px;
+  }
   .socialBtn {
-    display: none;
+    display: flex;
+    padding: 8px !important;
+  }
+  .socialBtn span {
+    display: none; /* Hide text on mobile */
   }
   .bottomNav {
     display: flex; /* Show Bottom Nav */
