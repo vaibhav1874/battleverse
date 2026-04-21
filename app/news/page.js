@@ -1,89 +1,103 @@
 import styles from './News.module.css';
-import { Newspaper, ArrowRight, Share2, MessageSquare } from 'lucide-react';
+import { Mic, Trophy, Users, Star, Calendar, ArrowRight } from 'lucide-react';
 
 export default function NewsPage() {
-  const articles = [
-    {
-      id: 1,
-      title: "BattleVerse Season 3 Announced: The Rise of the Underground",
-      date: "Oct 10, 2026",
-      excerpt: "The wait is over. Today we officially announce the start of Season 3, featuring a brand new tournament structure and a $20k grand prize.",
-      category: "Announcements",
-      image: "https://images.unsplash.com/photo-1516280440614-37939bb91d8a?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80"
-    },
-    {
-      id: 2,
-      title: "Interview: How Vox Prepared for the Grand Finals",
-      date: "Oct 05, 2026",
-      excerpt: "We sat down with the Season 2 champion to discuss his process, his rivals, and what the underground means to him.",
-      category: "Artist Stories",
-      image: "https://images.unsplash.com/photo-1539571696357-5a69c17a67c6?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80"
-    },
-    {
-      id: 3,
-      title: "Recap: The Iron Mic Brooklyn Qualifiers",
-      date: "Sep 28, 2026",
-      excerpt: "Relive the fire from last week's live event where 32 artists battled for a spot in the main event.",
-      category: "Event Recaps",
-      image: "https://images.unsplash.com/photo-1571287346585-cba4c82e700d?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80"
-    }
-  ];
-
   return (
-    <div className={styles.container}>
+    <div className={`${styles.container} page-fade-in`}>
       <header className={styles.header}>
-        <h1 className="neon-text-purple">THE BEAT</h1>
-        <p className={styles.subtitle}>Updates, interviews, and deep dives into the culture.</p>
+        <h1 className="neon-text-purple">SEASON 2</h1>
+        <p className={styles.subtitle}>ANNOUNCEMENT</p>
       </header>
 
-      <div className={styles.topNews}>
-        <div className={styles.featuredArticle}>
-          <img src="https://images.unsplash.com/photo-1493225255756-d9584f8606e9?ixlib=rb-1.2.1&auto=format&fit=crop&w=1200&q=80" alt="Featured" />
-          <div className={styles.featuredOverlay}>
-            <span className={styles.categoryTag}>Major News</span>
-            <h2>BATTLEVERSE X DISCORD: THE EXCLUSIVE PARTNERSHIP</h2>
-            <p>Elevating the digital battle experience with crystal clear audio and dedicated battle stages...</p>
-            <button className={`${styles.readBtn} glitch-hover`}>Read Full Article <ArrowRight size={18} /></button>
+      <article className={`${styles.mainArticle} glass`}>
+        <img 
+          src="https://images.unsplash.com/photo-1516280440614-37939bb91d8a?ixlib=rb-1.2.1&auto=format&fit=crop&w=1200&q=80" 
+          alt="BattleVerse Season 2" 
+          className={styles.heroImage} 
+        />
+        
+        <div className={styles.contentBody}>
+          <div className={styles.dateHighlight}>
+            <Calendar size={18} style={{ marginRight: '10px', verticalAlign: 'middle' }} />
+            LAUNCHING JUNE 27, 2026
           </div>
-        </div>
-      </div>
 
-      <section className={styles.articleGrid}>
-        {articles.map(article => (
-          <article key={article.id} className={`${styles.card} glass`}>
-            <div className={styles.cardImage}>
-              <img src={article.image} alt={article.title} />
-              <div className={styles.cardCategory}>{article.category}</div>
-            </div>
-            <div className={styles.cardContent}>
-              <span className={styles.cardDate}>{article.date}</span>
-              <h3>{article.title}</h3>
-              <p>{article.excerpt}</p>
-              <div className={styles.cardFooter}>
-                <button className={styles.moreBtn}>Read More</button>
-                <div className={styles.actions}>
-                  <Share2 size={18} />
-                  <MessageSquare size={18} />
-                </div>
+          <h2>THE RETURN OF THE ARENA</h2>
+          <p>
+            The silence is over. After months of preparation and scouting the deepest corners of the underground, 
+            BattleVerse is officially returning for its most ambitious season yet. Season 2 isn't just a competition; 
+            it's the evolution of the culture. We've refined the rules, elevated the stakes, and prepared a stage 
+            worthy of the legends about to be born.
+          </p>
+
+          <p>
+            This season, we are looking for more than just rhymes. We are looking for the next iconic voice of the 
+            generation. Whether you're a veteran of the block or a newcomer with a laptop and a dream, the doors 
+            of the Vault are opening for you.
+          </p>
+
+          <h2>TOURNAMENT STRUCTURE</h2>
+          <div className={styles.roundGrid}>
+            {/* Round 1 */}
+            <div className={styles.roundCard}>
+              <div className={styles.roundHeader}>
+                <div className={styles.roundNumber}>1</div>
+                <h3>REGISTRATION</h3>
               </div>
+              <ul className={styles.process}>
+                <li>
+                  <span className={styles.dot}><Mic size={16} /></span>
+                  <span><strong>Open Submissions:</strong> Upload your best 60-second freestyle starting June 27th.</span>
+                </li>
+                <li>
+                  <span className={styles.dot}><Star size={16} /></span>
+                  <span><strong>Selection:</strong> Our panel of industry judges will evaluate flow, lyricism, and presence.</span>
+                </li>
+                <li>
+                  <span className={styles.dot}><Users size={16} /></span>
+                  <span><strong>The Cut:</strong> Only the Top 24 artists will be selected for the live main event.</span>
+                </li>
+              </ul>
             </div>
-          </article>
-        ))}
-      </section>
 
-      <section className={styles.newsletter}>
-        <div className={`${styles.newsletterCard} gritty-bg`}>
-          <Newspaper size={48} className="neon-text-blue" />
-          <div className={styles.newsletterInfo}>
-            <h3>STAY IN THE LOOP</h3>
-            <p>Get the latest battle announcements and interview drop notifications directly in your inbox.</p>
+            {/* Round 2 */}
+            <div className={styles.roundCard}>
+              <div className={styles.roundHeader}>
+                <div className={styles.roundNumber}>2</div>
+                <h3>MAIN COMPETITION</h3>
+              </div>
+              <ul className={styles.process}>
+                <li>
+                  <span className={styles.dot}><Trophy size={16} /></span>
+                  <span><strong>Head-to-Head:</strong> The Top 24 enter a double-elimination bracket in the live arena.</span>
+                </li>
+                <li>
+                  <span className={styles.dot}><ArrowRight size={16} /></span>
+                  <span><strong>Survival:</strong> Artists must win their battles to maintain their spot in the Vault.</span>
+                </li>
+                <li>
+                  <span className={styles.dot}><Star size={16} /></span>
+                  <span><strong>Finalist Cut:</strong> Only the Top 12 elite will advance to the Quarter-Finals.</span>
+                </li>
+              </ul>
+            </div>
           </div>
-          <form className={styles.newsletterForm}>
-            <input type="email" placeholder="Enter your email" required />
-            <button type="submit" className="btn btn-primary">Subscribe</button>
-          </form>
+
+          <h2>PREPARE FOR BATTLE</h2>
+          <p>
+            The countdown has begun. Sharpen your pens, refine your delivery, and prepare to leave everything in the ring. 
+            Detailed submission guidelines and the official registration portal will go live on June 27th at Midnight.
+          </p>
+          
+          <p>
+            This is your moment. This is your legacy. Welcome to Season 2.
+          </p>
+
+          <div className={styles.footerNote}>
+            — Team BattleVerse
+          </div>
         </div>
-      </section>
+      </article>
     </div>
   );
 }
