@@ -1,5 +1,6 @@
 import "./globals.css";
 import Navbar from "@/components/Navbar";
+import FloatingMenu from "@/components/FloatingMenu";
 import Footer from "@/components/Footer";
 import InteractiveProvider from "@/components/InteractiveProvider";
 
@@ -15,6 +16,7 @@ export default function RootLayout({ children }) {
         <InteractiveProvider />
         <div className="smoke-overlay"></div>
         <Navbar />
+        <FloatingMenu />
         <main className="page-fade-in">{children}</main>
         <Footer />
       </body>
