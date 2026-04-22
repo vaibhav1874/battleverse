@@ -37,10 +37,10 @@ export default function Navbar() {
           </div>
 
           <div className={styles.actions}>
-            <Link href="/register" className={`btn btn-neon-blue glitch-hover ${styles.navBtn}`}>
+            <Link href="/register" className={`btn btn-neon-blue glitch-hover ${styles.navBtn} ${styles.registerBtn}`}>
               Register S2
             </Link>
-            <Link href="https://discord.gg/Mv5Qkq5r" target="_blank" className={`btn btn-primary glitch-hover ${styles.navBtn}`}>
+            <Link href="https://discord.gg/Mv5Qkq5r" target="_blank" className={`btn btn-primary glitch-hover ${styles.navBtn} ${styles.discordBtn}`}>
               Join Discord
             </Link>
             
