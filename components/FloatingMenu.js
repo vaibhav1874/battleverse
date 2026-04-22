@@ -18,10 +18,10 @@ export default function FloatingMenu() {
 
   const menuItems = [
     {
-      name: 'Register S2',
-      icon: UserPlus,
-      href: '/register',
-      color: 'var(--primary)',
+      name: 'Discord',
+      icon: Zap,
+      href: 'https://discord.gg/Mv5Qkq5r',
+      color: '#5865F2',
       delay: 0.1
     },
     {
