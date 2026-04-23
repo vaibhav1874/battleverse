@@ -17,7 +17,7 @@ export default function EventsPage() {
     { 
       id: 1, 
       name: "Battleverse Season 1", 
-      winner: "shivendu mishra",
+      winner: "shibz(shivendu mishra)",
       link: "https://youtu.be/7s8ffzMJY4Y?si=S9ae75myyBpQHI57"
     }
   ];
