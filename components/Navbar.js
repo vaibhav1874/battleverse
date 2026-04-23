@@ -40,17 +40,6 @@ export default function Navbar() {
             <Link href="/register" className={`btn btn-neon-blue glitch-hover ${styles.navBtn} ${styles.registerBtn}`}>
               Register S2
             </Link>
-            <Link href="https://discord.gg/Mv5Qkq5r" target="_blank" className={`btn btn-primary glitch-hover ${styles.navBtn} ${styles.discordBtn}`}>
-              Join Discord
-            </Link>
-            
-            {/* Social icons only on large screens, hidden via CSS on mobile */}
-            <Link href="https://www.instagram.com/battleverse.hq?igsh=MWg0dWg4NW94YmZ0bA==" target="_blank" className={`btn btn-instagram ${styles.navBtn} ${styles.socialBtn}`}>
-              <Camera size={18} /> <span>INSTA</span>
-            </Link>
-            <Link href="https://chat.whatsapp.com/CX47jPP3cpXIWTvUaV9P99" target="_blank" className={`btn btn-whatsapp ${styles.navBtn} ${styles.socialBtn}`}>
-              <MessageCircle size={18} /> <span>WHATSAPP</span>
-            </Link>
           </div>
         </div>
       </nav>
