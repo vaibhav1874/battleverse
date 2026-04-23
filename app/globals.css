@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;700;800&family=Syne:wght@700;800&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Outfit:wght@700;800;900&family=Bebas+Neue&display=swap');
 
 :root {
   --background: #ffffff;
@@ -23,9 +23,9 @@
   --surface-alt: #121212;
   --gritty: #1a1a1a;
   
-  --font-main: 'Plus Jakarta Sans', sans-serif;
-  --font-title: 'Syne', sans-serif;
-  --font-street: 'Permanent Marker', cursive;
+  --font-main: 'Inter', sans-serif;
+  --font-title: 'Outfit', sans-serif;
+  --font-hero: 'Bebas Neue', cursive;
   
   --glitch-speed: 0.3s;
 }
@@ -53,17 +53,28 @@ a {
 
 h1, h2, h3, h4 {
   font-family: var(--font-title);
-  font-weight: 800;
+  font-weight: 900;
   text-transform: uppercase;
-  letter-spacing: -0.01em;
+  letter-spacing: -0.03em;
   word-wrap: break-word;
   overflow-wrap: break-word;
-  hyphens: auto;
 }
 
-h1 { font-size: clamp(1.6rem, 10vw, 5rem); line-height: 1; }
-h2 { font-size: clamp(1.4rem, 8vw, 3.5rem); line-height: 1.1; }
-h3 { font-size: clamp(1.2rem, 6vw, 2.2rem); }
+h1 { font-size: clamp(2.5rem, 12vw, 6rem); line-height: 0.9; }
+h2 { font-size: clamp(2rem, 8vw, 4rem); line-height: 1; letter-spacing: -0.02em; }
+h3 { font-size: clamp(1.4rem, 5vw, 2.2rem); line-height: 1.2; }
+
+p {
+  font-family: var(--font-main);
+  line-height: 1.7;
+  color: rgba(255, 255, 255, 0.7);
+  letter-spacing: -0.01em;
+}
+
+.hero-text {
+  font-family: var(--font-hero);
+  letter-spacing: 2px;
+}
 
 .street-text {
   font-family: var(--font-street);

@@ -22,11 +22,12 @@
 }
 
 .logo {
-  font-size: 1.6rem;
-  font-weight: 900;
-  letter-spacing: -0.5px;
+  font-family: var(--font-hero);
+  font-size: 2rem;
+  font-weight: 400;
+  letter-spacing: 1.5px;
   display: flex;
-  gap: 4px;
+  gap: 6px;
 }
 
 .links {
@@ -172,8 +173,10 @@
     gap: 5px;
   }
   .logo {
-    font-size: 1rem;
+    font-family: var(--font-hero);
+    font-size: 1.4rem;
     gap: 2px;
+    letter-spacing: 1px;
   }
   .discordBtn, .socialBtn {
     display: none !important; /* Hide non-essential buttons in top nav on mobile */
