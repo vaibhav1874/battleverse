@@ -168,22 +168,29 @@
     padding: 6px 12px !important;
     font-size: 0.7rem !important;
   }
+  .actions {
+    gap: 5px;
+  }
   .logo {
-    font-size: 1.1rem;
+    font-size: 1rem;
     gap: 2px;
   }
-  .discordBtn {
-    display: none !important; /* Hide Discord button on very small screens to prevent overlap */
+  .discordBtn, .socialBtn {
+    display: none !important; /* Hide non-essential buttons in top nav on mobile */
   }
   .registerBtn {
-    padding: 5px 10px !important;
+    padding: 5px 12px !important;
     font-size: 0.65rem !important;
+    letter-spacing: -0.2px;
   }
   .bottomNav {
     height: 65px;
-    padding: 0 10px;
+    padding: 0 5px;
+    bottom: 15px; /* Give more space at bottom */
+    width: 95%;
   }
   .bottomLink span {
-    font-size: 0.6rem;
+    font-size: 0.55rem;
+    letter-spacing: 0;
   }
 }

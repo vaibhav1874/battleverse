@@ -135,9 +135,10 @@
 
 @media (max-width: 480px) {
   .title {
-    font-size: clamp(1.8rem, 12vw, 2.2rem); /* Even smaller for very small devices */
+    font-size: clamp(1.4rem, 12vw, 2.2rem); /* Even smaller for very small devices */
     padding: 0 5px;
     word-break: break-word;
+    letter-spacing: -0.5px;
   }
   .badge {
     font-size: 0.7rem;
