@@ -4,6 +4,17 @@
   margin: 0 auto;
 }
 
+.header {
+  text-align: center;
+  margin-bottom: 80px;
+}
+
+.subtitle {
+  font-size: 1.1rem;
+  color: rgba(255, 255, 255, 0.5);
+  margin-top: 12px;
+}
+
 .comingSoonSection {
   margin-top: 60px;
   margin-bottom: 100px;
@@ -54,12 +65,67 @@
   line-height: 1.6;
 }
 
-.decorLine {
-  width: 100px;
-  height: 2px;
-  background: var(--accent);
-  margin: 0 auto;
-  opacity: 0.5;
+.legacyGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 450px));
+  gap: 60px;
+  justify-content: center;
+  margin-bottom: 120px;
+}
+
+.battlerCard {
+  border-radius: 20px;
+  overflow: hidden;
+  border: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.battlerImage {
+  position: relative;
+  height: 400px;
+}
+
+.battlerImage img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: top center;
+}
+
+.rankBadge {
+  position: absolute;
+  top: 20px;
+  left: 20px;
+  padding: 8px 16px;
+  border-radius: 4px;
+  font-size: 0.75rem;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.battlerInfo {
+  padding: 24px;
+  text-align: center;
+}
+
+.battlerInfo h3 {
+  font-size: 2rem;
+  margin-bottom: 4px;
+}
+
+.battlerRole {
+  font-size: 0.9rem;
+  color: var(--primary);
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+}
+
+.divider {
+  width: 100%;
+  height: 1px;
+  background: linear-gradient(to right, transparent, rgba(0, 166, 122, 0.2), transparent);
+  margin-bottom: 120px;
 }
 
 /* Join Section */

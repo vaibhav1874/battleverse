@@ -1,9 +1,52 @@
 import styles from './Battlers.module.css';
-import { Mic, Trophy, Flame, MessageSquare, Camera, Play, UserPlus } from 'lucide-react';
+import { Mic, UserPlus } from 'lucide-react';
+import dynamic from 'next/dynamic';
+const TiltCard = dynamic(() => import('@/components/TiltCard'), { ssr: false });
 
 export default function BattlersPage() {
+  const legacyBattlers = [
+    {
+      name: "SHIBZ",
+      title: "SEASON 1 WINNER",
+      role: "The Champion",
+      image: "/images/battlers/shibz.jpg",
+      color: "var(--primary)"
+    },
+    {
+      name: "LOWEND",
+      title: "SEASON 1 RUNNER-UP",
+      role: "The Challenger",
+      image: "/images/battlers/lowend.jpg",
+      color: "var(--accent)"
+    }
+  ];
+
   return (
     <div className={styles.container}>
+      <header className={styles.header}>
+        <h1 className="text-primary">LEGENDS OF THE VERSE</h1>
+        <p className={styles.subtitle}>Honoring the warriors who paved the way in Season 1.</p>
+      </header>
+
+      <div className={styles.legacyGrid}>
+        {legacyBattlers.map((battler, index) => (
+          <TiltCard key={index} className={`${styles.battlerCard} glass`}>
+            <div className={styles.battlerImage}>
+              <img src={battler.image} alt={battler.name} />
+              <div className={styles.rankBadge} style={{ backgroundColor: battler.color }}>
+                {battler.title}
+              </div>
+            </div>
+            <div className={styles.battlerInfo}>
+              <h3>{battler.name}</h3>
+              <span className={styles.battlerRole}>{battler.role}</span>
+            </div>
+          </TiltCard>
+        ))}
+      </div>
+
+      <div className={styles.divider}></div>
+
       <section className={styles.comingSoonSection}>
         <div className={styles.comingSoonContent}>
           <div className={styles.badge}>Vault Access Restricted</div>
