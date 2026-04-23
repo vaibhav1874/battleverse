@@ -1,3 +1,4 @@
+'use client';
 import styles from './Battlers.module.css';
 import { Mic, UserPlus } from 'lucide-react';
 import dynamic from 'next/dynamic';
