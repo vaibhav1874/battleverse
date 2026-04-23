@@ -2,9 +2,6 @@
 
 import { useState, useRef } from 'react';
 import styles from './Register.module.css';
-import { db, storage } from '@/lib/firebase';
-import { collection, addDoc, serverTimestamp } from 'firebase/firestore';
-import { ref, uploadBytesResumable, getDownloadURL } from 'firebase/storage';
 import { 
   User, Mic2, Mail, Phone, CheckCircle, 
   Upload, Music, Image as ImageIcon, Sparkles, 
@@ -36,7 +33,8 @@ export default function RegisterPage() {
 
   const [loading, setLoading] = useState(false);
   const [success, setSuccess] = useState(false);
-  const [uploadProgress, setUploadProgress] = useState(0);
+  const [statusMessage, setStatusMessage] = useState('');
+  const [progress, setProgress] = useState(0);
 
   const photoInput = useRef(null);
   const audioInput = useRef(null);
@@ -69,26 +67,6 @@ export default function RegisterPage() {
     }
   };
 
-  const uploadFile = (file, path) => {
-    return new Promise((resolve, reject) => {
-      const storageRef = ref(storage, `${path}/${Date.now()}_${file.name}`);
-      const uploadTask = uploadBytesResumable(storageRef, file);
-
-      uploadTask.on('state_changed', 
-        (snapshot) => {
-          const progress = (snapshot.bytesTransferred / snapshot.totalBytes) * 50; // Each file is 50%
-          setUploadProgress(prev => Math.min(prev + progress, 100));
-        }, 
-        (error) => reject(error), 
-        () => {
-          getDownloadURL(uploadTask.snapshot.ref).then((downloadURL) => {
-            resolve(downloadURL);
-          });
-        }
-      );
-    });
-  };
-
   const handleSubmit = async (e) => {
     e.preventDefault();
     if (!files.photo || !files.audio) {
@@ -97,28 +75,43 @@ export default function RegisterPage() {
     }
 
     setLoading(true);
-    setUploadProgress(0);
+    setProgress(10);
+    setStatusMessage('Preparing Files...');
 
     try {
-      // 1. Upload Media
-      const photoUrl = await uploadFile(files.photo, 'registrations/photos');
-      const audioUrl = await uploadFile(files.audio, 'registrations/auditions');
+      const submissionData = new FormData();
+      Object.keys(formData).forEach(key => {
+        submissionData.append(key, formData[key]);
+      });
+      submissionData.append('photo', files.photo);
+      submissionData.append('audio', files.audio);
 
-      // 2. Save Data to Firestore
-      await addDoc(collection(db, 'registrations_s2'), {
-        ...formData,
-        photoUrl,
-        audioUrl,
-        createdAt: serverTimestamp(),
-        status: 'pending'
+      setStatusMessage('Uploading to Secure Server...');
+      setProgress(40);
+
+      const response = await fetch('/api/register', {
+        method: 'POST',
+        body: submissionData,
       });
 
+      setProgress(80);
+      setStatusMessage('Finishing Up...');
+
+      const result = await response.json();
+
+      if (!response.ok) {
+        throw new Error(result.error || 'Failed to submit registration');
+      }
+
+      setProgress(100);
       setSuccess(true);
     } catch (error) {
       console.error("Error submitting registration:", error);
-      alert("Submission failed. Please try again.");
+      alert(`Submission failed: ${error.message}`);
     } finally {
       setLoading(false);
+      setStatusMessage('');
+      setProgress(0);
     }
   };
 
@@ -237,7 +230,7 @@ export default function RegisterPage() {
                 disabled={loading}
               >
                 {loading ? (
-                  <>Processing... {Math.round(uploadProgress)}%</>
+                  <>{statusMessage} {Math.round(progress)}%</>
                 ) : (
                   <>Complete Registration <ArrowRight size={18} style={{marginLeft: '8px'}} /></>
                 )}
