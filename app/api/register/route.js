@@ -3,6 +3,7 @@ import dbConnect from '@/lib/mongodb';
 import Registration from '@/models/Registration';
 import mongoose from 'mongoose';
 import { Readable } from 'stream';
+import { sendConfirmationEmail } from '@/lib/mail';
 
 // Helper to upload to GridFS
 async function uploadToGridFS(file, filename) {
@@ -63,6 +64,13 @@ export async function POST(request) {
       photoUrl,
       audioUrl,
     });
+
+    // 3. Send Confirmation Email (Async)
+    try {
+      await sendConfirmationEmail(email, artistName);
+    } catch (mailError) {
+      console.error('Email fallback error:', mailError);
+    }
 
     return NextResponse.json({ success: true, data: registration }, { status: 201 });
   } catch (error) {
