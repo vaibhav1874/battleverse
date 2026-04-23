@@ -41,11 +41,11 @@ export default function UpcomingEvents() {
           <div className={styles.meta}>
             <div className={styles.metaItem}>
               <Calendar size={18} />
-              <span>June 27, 2026 | 8:00 PM</span>
+              <span>June 27, 2026</span>
             </div>
             <div className={styles.metaItem}>
               <MapPin size={18} />
-              <span>Main Stage & Global Stream</span>
+              <span>Battleverse Discord</span>
             </div>
           </div>
           <p className={styles.description}>

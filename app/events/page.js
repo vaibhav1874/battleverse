@@ -55,8 +55,8 @@ export default function EventsPage() {
                     <span>{event.location}</span>
                   </div>
                 </div>
-                <button className="btn btn-primary glitch-hover" style={{ width: '100%' }}>
-                  <Ticket size={18} /> Get Tickets / Register
+                <button className="btn btn-primary glitch-hover" style={{ width: 'auto', padding: '12px 32px' }}>
+                  Register Now
                 </button>
               </div>
             </div>
