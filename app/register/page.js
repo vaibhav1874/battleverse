@@ -94,17 +94,22 @@ export default function RegisterPage() {
         body: submissionData,
       });
 
-      setProgress(80);
-      setStatusMessage('Finishing Up...');
-
-      const result = await response.json();
-
-      if (!response.ok) {
-        throw new Error(result.error || 'Failed to submit registration');
+      const contentType = response.headers.get("content-type");
+      if (contentType && contentType.indexOf("application/json") !== -1) {
+        const result = await response.json();
+        if (response.ok) {
+          setProgress(100);
+          setSuccess(true);
+        } else {
+          throw new Error(result.error || 'Failed to submit registration');
+        }
+      } else {
+        if (response.status === 413) {
+          throw new Error('File size is too large. Please keep total files under 4.5MB.');
+        } else {
+          throw new Error('Server error ' + response.status);
+        }
       }
-
-      setProgress(100);
-      setSuccess(true);
     } catch (error) {
       console.error("Error submitting registration:", error);
       alert(`Submission failed: ${error.message}`);
