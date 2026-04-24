@@ -9,8 +9,6 @@ import {
 } from 'lucide-react';
 import { motion, AnimatePresence } from 'framer-motion';
 import MotionWrapper from '@/components/MotionWrapper';
-import { storage } from '@/lib/firebase';
-import { ref, uploadBytesResumable, getDownloadURL } from 'firebase/storage';
 
 export default function RegisterPage() {
   const [formData, setFormData] = useState({
@@ -74,24 +72,26 @@ export default function RegisterPage() {
     }
   };
 
-  const uploadToFirebase = (file, path) => {
-    return new Promise((resolve, reject) => {
-      const storageRef = ref(storage, path);
-      const uploadTask = uploadBytesResumable(storageRef, file);
+  const uploadToCloudinary = async (file, resourceType) => {
+    const cloudName = process.env.NEXT_PUBLIC_CLOUDINARY_CLOUD_NAME;
+    const uploadPreset = process.env.NEXT_PUBLIC_CLOUDINARY_UPLOAD_PRESET;
+    
+    const formData = new FormData();
+    formData.append('file', file);
+    formData.append('upload_preset', uploadPreset);
 
-      uploadTask.on('state_changed', 
-        (snapshot) => {
-          const p = (snapshot.bytesTransferred / snapshot.totalBytes) * 100;
-          setProgress(p);
-        }, 
-        (error) => reject(error), 
-        () => {
-          getDownloadURL(uploadTask.snapshot.ref).then((downloadURL) => {
-            resolve(downloadURL);
-          });
-        }
-      );
+    const response = await fetch(`https://api.cloudinary.com/v1_1/${cloudName}/${resourceType}/upload`, {
+      method: 'POST',
+      body: formData,
     });
+
+    if (!response.ok) {
+      const error = await response.json();
+      throw new Error(error.error?.message || 'Cloudinary upload failed');
+    }
+
+    const data = await response.json();
+    return data.secure_url;
   };
 
   const handleSubmit = async (e) => {
@@ -102,19 +102,18 @@ export default function RegisterPage() {
     }
 
     setLoading(true);
-    setProgress(0);
-    setStatusMessage('Uploading Photo...');
+    setProgress(10);
+    setStatusMessage('Uploading Photo to Cloudinary...');
 
     try {
       // 1. Upload Photo
-      const photoPath = `registrations/photos/${Date.now()}_${files.photo.name}`;
-      const photoUrl = await uploadToFirebase(files.photo, photoPath);
-
-      setStatusMessage('Uploading Audio...');
-      setProgress(0); // Reset for next file
-      // 2. Upload Audio
-      const audioPath = `registrations/audio/${Date.now()}_${files.audio.name}`;
-      const audioUrl = await uploadToFirebase(files.audio, audioPath);
+      const photoUrl = await uploadToCloudinary(files.photo, 'image');
+      
+      setProgress(50);
+      setStatusMessage('Uploading Audio to Cloudinary...');
+      
+      // 2. Upload Audio (Cloudinary treats audio as 'video' resource type)
+      const audioUrl = await uploadToCloudinary(files.audio, 'video');
 
       setStatusMessage('Finalizing Registration...');
       setProgress(90);
