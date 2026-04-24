@@ -9,6 +9,8 @@ import {
 } from 'lucide-react';
 import { motion, AnimatePresence } from 'framer-motion';
 import MotionWrapper from '@/components/MotionWrapper';
+import { storage } from '@/lib/firebase';
+import { ref, uploadBytesResumable, getDownloadURL } from 'firebase/storage';
 
 export default function RegisterPage() {
   const [formData, setFormData] = useState({
@@ -50,8 +52,13 @@ export default function RegisterPage() {
   const handleFileChange = (e, type) => {
     const file = e.target.files[0];
     if (file) {
-      if (type === 'audio' && file.size > 30 * 1024 * 1024) {
-        alert("Audio file too large. Max 30MB allowed.");
+      // New limits: 10MB for audio, 2MB for photo
+      if (type === 'audio' && file.size > 10 * 1024 * 1024) {
+        alert("Audio file too large. Max 10MB allowed for faster processing.");
+        return;
+      }
+      if (type === 'photo' && file.size > 2 * 1024 * 1024) {
+        alert("Photo file too large. Max 2MB allowed.");
         return;
       }
       setFiles(prev => ({ ...prev, [type]: file }));
@@ -67,6 +74,26 @@ export default function RegisterPage() {
     }
   };
 
+  const uploadToFirebase = (file, path) => {
+    return new Promise((resolve, reject) => {
+      const storageRef = ref(storage, path);
+      const uploadTask = uploadBytesResumable(storageRef, file);
+
+      uploadTask.on('state_changed', 
+        (snapshot) => {
+          const p = (snapshot.bytesTransferred / snapshot.totalBytes) * 100;
+          setProgress(p);
+        }, 
+        (error) => reject(error), 
+        () => {
+          getDownloadURL(uploadTask.snapshot.ref).then((downloadURL) => {
+            resolve(downloadURL);
+          });
+        }
+      );
+    });
+  };
+
   const handleSubmit = async (e) => {
     e.preventDefault();
     if (!files.photo || !files.audio) {
@@ -75,40 +102,41 @@ export default function RegisterPage() {
     }
 
     setLoading(true);
-    setProgress(10);
-    setStatusMessage('Preparing Files...');
+    setProgress(0);
+    setStatusMessage('Uploading Photo...');
 
     try {
-      const submissionData = new FormData();
-      Object.keys(formData).forEach(key => {
-        submissionData.append(key, formData[key]);
-      });
-      submissionData.append('photo', files.photo);
-      submissionData.append('audio', files.audio);
+      // 1. Upload Photo
+      const photoPath = `registrations/photos/${Date.now()}_${files.photo.name}`;
+      const photoUrl = await uploadToFirebase(files.photo, photoPath);
 
-      setStatusMessage('Uploading to Secure Server...');
-      setProgress(40);
+      setStatusMessage('Uploading Audio...');
+      setProgress(0); // Reset for next file
+      // 2. Upload Audio
+      const audioPath = `registrations/audio/${Date.now()}_${files.audio.name}`;
+      const audioUrl = await uploadToFirebase(files.audio, audioPath);
+
+      setStatusMessage('Finalizing Registration...');
+      setProgress(90);
 
       const response = await fetch('/api/register', {
         method: 'POST',
-        body: submissionData,
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({
+          ...formData,
+          photoUrl,
+          audioUrl,
+        }),
       });
 
-      const contentType = response.headers.get("content-type");
-      if (contentType && contentType.indexOf("application/json") !== -1) {
-        const result = await response.json();
-        if (response.ok) {
-          setProgress(100);
-          setSuccess(true);
-        } else {
-          throw new Error(result.error || 'Failed to submit registration');
-        }
+      const result = await response.json();
+      if (response.ok) {
+        setProgress(100);
+        setSuccess(true);
       } else {
-        if (response.status === 413) {
-          throw new Error('File size is too large. Please keep total files under 4.5MB.');
-        } else {
-          throw new Error('Server error ' + response.status);
-        }
+        throw new Error(result.error || 'Failed to submit registration');
       }
     } catch (error) {
       console.error("Error submitting registration:", error);

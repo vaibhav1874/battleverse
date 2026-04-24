@@ -19,6 +19,13 @@ export default function BattlersPage() {
       role: "The Challenger",
       image: "/images/battlers/lowend.jpg",
       color: "var(--accent)"
+    },
+    {
+      name: "SURKH",
+      title: "SEASON 1 - 3RD PLACE",
+      role: "The Finisher",
+      image: "/images/battlers/surkh.jpeg",
+      color: "var(--secondary)"
     }
   ];
 
