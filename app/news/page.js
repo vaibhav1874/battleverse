@@ -19,7 +19,7 @@ export default function NewsPage() {
         <div className={styles.contentBody}>
           <div className={styles.dateHighlight}>
             <Calendar size={18} style={{ marginRight: '10px', verticalAlign: 'middle' }} />
-            LAUNCHING JUNE 27, 2026
+            LAUNCHING: TO BE ANNOUNCED
           </div>
 
           <h2>THE RETURN OF THE ARENA</h2>
@@ -47,7 +47,7 @@ export default function NewsPage() {
               <ul className={styles.process}>
                 <li>
                   <span className={styles.dot}><Mic size={16} /></span>
-                  <span><strong>Open Submissions:</strong> Upload your best 60-second freestyle starting June 27th.</span>
+                  <span><strong>Open Submissions:</strong> Upload your best 60-second freestyle. Launch date to be announced.</span>
                 </li>
                 <li>
                   <span className={styles.dot}><Star size={16} /></span>
@@ -86,7 +86,7 @@ export default function NewsPage() {
           <h2>PREPARE FOR BATTLE</h2>
           <p>
             The countdown has begun. Sharpen your pens, refine your delivery, and prepare to leave everything in the ring. 
-            Detailed submission guidelines and the official registration portal will go live on June 27th at Midnight.
+            Detailed submission guidelines and the official registration portal will go live: To Be Announced.
           </p>
           
           <p>

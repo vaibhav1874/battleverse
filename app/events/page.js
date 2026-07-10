@@ -6,7 +6,7 @@ export default function EventsPage() {
     {
       id: 1,
       name: "Battleverse Season 2 Launch",
-      date: "June 27, 2026",
+      date: "To Be Announced",
       location: "Battleverse Discord",
       type: "Season Event",
       image: "https://images.unsplash.com/photo-1492684223066-81342ee5ff30?auto=format&fit=crop&w=800&q=80"

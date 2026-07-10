@@ -96,6 +96,15 @@
   justify-content: space-between;
 }
 
+.tba {
+  font-size: clamp(1.8rem, 4vw, 2.2rem);
+  font-weight: 900;
+  color: white;
+  margin: 20px 0;
+  text-shadow: 0 0 10px rgba(188, 19, 254, 0.6), 0 0 20px rgba(0, 243, 255, 0.4);
+  letter-spacing: 1px;
+}
+
 .unit {
   display: flex;
   flex-direction: column;

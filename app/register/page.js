@@ -1,6 +1,7 @@
 'use client';
 
 import { useState, useRef } from 'react';
+import Link from 'next/link';
 import styles from './Register.module.css';
 import { 
   User, Mic2, Mail, Phone, CheckCircle, 
@@ -11,6 +12,8 @@ import { motion, AnimatePresence } from 'framer-motion';
 import MotionWrapper from '@/components/MotionWrapper';
 
 export default function RegisterPage() {
+  const isRegistrationOpen = false;
+
   const [formData, setFormData] = useState({
     artistName: '',
     stageName: '',
@@ -152,18 +155,47 @@ export default function RegisterPage() {
       <header className={styles.header}>
         <MotionWrapper direction="down">
           <h1 className="neon-text-purple">SEASON 2 <span className="neon-text-blue">REGISTRATION</span></h1>
-          <p className={styles.subtitle}>Fill in your details to claim your spot in the next era of BattleVerse.</p>
+          <p className={styles.subtitle}>
+            {!isRegistrationOpen ? 'Registration details for BattleVerse Season 2 will be announced soon.' : 'Fill in your details to claim your spot in the next era of BattleVerse.'}
+          </p>
         </MotionWrapper>
       </header>
 
       <AnimatePresence>
         {!success ? (
-          <motion.div 
-            className={`${styles.formCard} glass`}
-            initial={{ opacity: 0, scale: 0.95 }}
-            animate={{ opacity: 1, scale: 1 }}
-            exit={{ opacity: 0, scale: 1.1 }}
-          >
+          !isRegistrationOpen ? (
+            <motion.div 
+              className={`${styles.formCard} glass`}
+              initial={{ opacity: 0, scale: 0.95 }}
+              animate={{ opacity: 1, scale: 1 }}
+              exit={{ opacity: 0, scale: 1.1 }}
+              style={{ textAlign: 'center', padding: '60px 40px' }}
+            >
+              <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', gap: '20px' }}>
+                <Clock size={64} className="neon-text-purple" style={{ marginBottom: '10px' }} />
+                <h2 className="neon-text-blue" style={{ fontSize: '2rem', fontWeight: '900', letterSpacing: '1px' }}>
+                  REGISTRATION TO BE ANNOUNCED
+                </h2>
+                <p style={{ color: 'rgba(255,255,255,0.7)', fontSize: '1.1rem', maxWidth: '500px', lineHeight: '1.6' }}>
+                  Registrations for BattleVerse Season 2 are not open yet. Please check back later or join our Discord to receive notifications when they go live.
+                </p>
+                <div style={{ marginTop: '20px', display: 'flex', gap: '15px' }}>
+                  <a href="https://discord.gg/Mv5Qkq5r" target="_blank" rel="noopener noreferrer" className="btn btn-primary" style={{ textDecoration: 'none' }}>
+                    Join Discord
+                  </a>
+                  <Link href="/" className="btn btn-outline" style={{ textDecoration: 'none' }}>
+                    Back to Home
+                  </Link>
+                </div>
+              </div>
+            </motion.div>
+          ) : (
+            <motion.div 
+              className={`${styles.formCard} glass`}
+              initial={{ opacity: 0, scale: 0.95 }}
+              animate={{ opacity: 1, scale: 1 }}
+              exit={{ opacity: 0, scale: 1.1 }}
+            >
             <form onSubmit={handleSubmit} className={styles.formGrid}>
               <div className={styles.formGroup}>
                 <label><User size={14} style={{marginRight: '6px'}}/> Artist Name</label>
@@ -269,6 +301,7 @@ export default function RegisterPage() {
               </button>
             </form>
           </motion.div>
+        )
         ) : (
           <motion.div 
             className={`${styles.successOverlay} glass`}
